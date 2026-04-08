@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MacDonald Law Office in Smiths Falls, Ontario provides trusted legal services in real estate law, criminal defence litigation, and estate planning across Eastern Ontario.">
+    <title>MacDonald Law Office - Real Estate, Criminal Defence and Wills | Smiths Falls</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">MacDonald Law Office</a>
+            </div>
+            <div class="header-phone">
+                <a href="tel:6132830012">(613) 283-0012</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="practice-areas.html">Practice Areas</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MacDonald Law Office</h1>
+            <p class="tagline">Trusted Legal Counsel in Smiths Falls</p>
+            <p class="hero-contact">(613) 283-0012 | Reception@SmithsFallsLawyer.com</p>
+            <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="container">
+            <h2>Trusted Criminal Defence, Real Estate &amp; Estate Law</h2>
+            <p>MacDonald Law Office, situated in downtown Smiths Falls, Ontario, delivers focused legal services in criminal defence, real estate transactions, and estate planning for clients across Eastern Ontario. Since 2002, Mark MacDonald has provided over two decades of experience, offering practical courtroom advocacy, clear navigation of complex processes such as Criminal Code and Provincial Act charges, residential conveyancing for purchases, sales, and mortgages, and will preparation.</p>
+            <p>The firm emphasizes a client-centered approach with straightforward communication, transparent pricing, and flexible scheduling. Serving Lanark, Leeds &amp; Grenville, and nearby communities, MacDonald Law Office helps individuals tackle demanding legal matters through composed expertise and effective, results-driven strategies.</p>
+        </div>
+    </section>
+
+    <!-- Practice Area Cards -->
+    <section class="practice-areas">
+        <div class="container">
+            <h2>Learn What I Can Do For You</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">&#9878;</div>
+                    <h3>Real Estate Law</h3>
+                    <p>Buy, Sell or Mortgage</p>
+                    <a href="practice-areas.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128737;</div>
+                    <h3>Criminal Defence Litigation</h3>
+                    <p>Over 2 Decades of Local Experience</p>
+                    <a href="practice-areas.html#criminal" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128220;</div>
+                    <h3>Estate Planning</h3>
+                    <p>Wills and Power of Attorney</p>
+                    <a href="practice-areas.html#wills" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Need Legal Help?</h2>
+            <p>Contact MacDonald Law Office today for a confidential consultation.</p>
+            <p class="cta-contact">(613) 283-0012 | Reception@SmithsFallsLawyer.com</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>MacDonald Law Office</h3>
+                <address>
+                    94 Beckwith Street North<br>
+                    Smiths Falls, Ontario K7A 2C1<br>
+                    Phone: <a href="tel:6132830012">(613) 283-0012</a><br>
+                    Fax: (613) 706-3339<br>
+                    Email: <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a>
+                </address>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="practice-areas.html">Practice Areas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Office Hours</h3>
+                <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                <p>Available for urgent criminal matters</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MacDonald Law Office. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            var nav = document.getElementById('main-nav');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>

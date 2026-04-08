@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact MacDonald Law Office in Smiths Falls, Ontario. Call (613) 283-0012 or email Reception@SmithsFallsLawyer.com for a consultation.">
+    <title>Contact | MacDonald Law Office</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">MacDonald Law Office</a>
+            </div>
+            <div class="header-phone">
+                <a href="tel:6132830012">(613) 283-0012</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="practice-areas.html">Practice Areas</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>MacDonald Law Office</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <h3>Office Address</h3>
+                    <p>94 Beckwith Street North<br>Smiths Falls, Ontario K7A 2C1</p>
+                    <p><strong>Phone:</strong> <a href="tel:6132830012">(613) 283-0012</a></p>
+                    <p><strong>Fax:</strong> (613) 706-3339</p>
+                    <p><strong>Email:</strong> <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a></p>
+                    <p><strong>Office Hours</strong><br>Monday &ndash; Friday, 9:00 AM &ndash; 5:00 PM</p>
+                    <div class="urgent">
+                        For urgent matters call <a href="tel:6132830012">(613) 283-0012</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="mailto:Reception@SmithsFallsLawyer.com" method="POST" enctype="text/plain">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <label for="preferred-contact">Preferred Contact Method</label>
+                        <select id="preferred-contact" name="preferred-contact">
+                            <option value="Phone">Phone</option>
+                            <option value="Email">Email</option>
+                        </select>
+
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p class="disclaimer">Submitting this form does not create a solicitor-client relationship. Please do not include confidential or sensitive details in this message. A member of the firm will respond to confirm whether MacDonald Law Office is able to assist with your matter.</p>
+                </div>
+
+            </div>
+
+            <!-- Map Embed -->
+            <div class="map-embed">
+                <iframe src="https://maps.google.com/maps?q=94+Beckwith+Street+North+Smiths+Falls+Ontario&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="MacDonald Law Office location"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>MacDonald Law Office</h3>
+                <address>
+                    94 Beckwith Street North<br>
+                    Smiths Falls, Ontario K7A 2C1<br>
+                    Phone: <a href="tel:6132830012">(613) 283-0012</a><br>
+                    Fax: (613) 706-3339<br>
+                    Email: <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a>
+                </address>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="practice-areas.html">Practice Areas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Office Hours</h3>
+                <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                <p>Available for urgent criminal matters</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MacDonald Law Office. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            var nav = document.getElementById('main-nav');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>

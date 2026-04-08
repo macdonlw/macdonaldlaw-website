@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read what clients say about their experience with MacDonald Law Office in Smiths Falls, Ontario.">
+    <title>Testimonials | MacDonald Law Office</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">MacDonald Law Office</a>
+            </div>
+            <div class="header-phone">
+                <a href="tel:6132830012">(613) 283-0012</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="practice-areas.html">Practice Areas</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Client Testimonials</h1>
+            <p>What Our Clients Say</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-grid">
+
+                <div class="testimonial">
+                    <p>I was impressed with the service I received from Mark and his staff when I purchased my first home. <span class="attribution">&mdash; S.S.</span></p>
+                </div>
+
+                <div class="testimonial">
+                    <p>When I was first charged with a criminal offence I didn't know what to do or what was going to happen. Mark's words and actions provided me reassurance during a difficult time. <span class="attribution">&mdash; H.T.</span></p>
+                </div>
+
+                <div class="testimonial">
+                    <p>We put off doing our wills for too long. We were pleased with the process and the price. Highly recommended. <span class="attribution">&mdash; L.W.</span></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Need Legal Help?</h2>
+            <p>Contact MacDonald Law Office today for a confidential consultation.</p>
+            <p class="cta-contact">(613) 283-0012 | Reception@SmithsFallsLawyer.com</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>MacDonald Law Office</h3>
+                <address>
+                    94 Beckwith Street North<br>
+                    Smiths Falls, Ontario K7A 2C1<br>
+                    Phone: <a href="tel:6132830012">(613) 283-0012</a><br>
+                    Fax: (613) 706-3339<br>
+                    Email: <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a>
+                </address>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="practice-areas.html">Practice Areas</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Office Hours</h3>
+                <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                <p>Available for urgent criminal matters</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MacDonald Law Office. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            var nav = document.getElementById('main-nav');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            nav.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
