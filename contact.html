@@ -3,142 +3,543 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact MacDonald Law Office in Smiths Falls, Ontario. Call (613) 283-0012 or email Reception@SmithsFallsLawyer.com for a consultation.">
-    <title>Contact | MacDonald Law Office</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta name="description" content="Contact MacDonald Law Office at 94 Beckwith Street North, Smiths Falls, Ontario. Call (613) 283-0012 for criminal defence, real estate, or wills consultations.">
+    <title>Contact MacDonald Law Office — Smiths Falls Criminal & Real Estate Lawyer</title>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">MacDonald Law Office</a>
+    <!-- Tailwind CSS via CDN with custom colors -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1B2A4A',
+                            light: '#2A3D66',
+                            dark: '#111D35',
+                        },
+                        accent: {
+                            DEFAULT: '#B8942D',
+                            hover: '#9A7B22',
+                            light: '#D4B44A',
+                        },
+                        cream: {
+                            DEFAULT: '#FAF9F6',
+                            dark: '#F2F0EB',
+                        },
+                        charcoal: '#1A1A1A',
+                        warm: {
+                            100: '#F7F5F0',
+                            200: '#EDE9E0',
+                            300: '#D4CFC4',
+                            400: '#A9A298',
+                            500: '#7A7267',
+                        },
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts: Cormorant Garamond + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .btn-transition {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #B8942D;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #B8942D;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .divider {
+            width: 48px;
+            height: 4px;
+            background-color: #B8942D;
+            margin: 0 auto;
+        }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: white;
+            border-bottom: 1px solid #EDE9E0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .logo-box {
+            width: 44px;
+            height: 44px;
+            border: 2px solid #B8942D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1B2A4A;
+            transition: all 0.3s ease;
+        }
+
+        .logo-box:hover {
+            background-color: #B8942D;
+            color: white;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #D4CFC4;
+            border-radius: 4px;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #B8942D;
+            box-shadow: 0 0 0 3px rgba(184, 148, 45, 0.1);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1A1A1A;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background-color: #B8942D;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary:hover {
+            background-color: #9A7B22;
+            transform: translateX(2px);
+        }
+
+        .contact-card {
+            background-color: white;
+            border: 1px solid #D4CFC4;
+            border-radius: 4px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: #B8942D;
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1B2A4A;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #7A7267;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .intersection-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .intersection-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal">
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded">
+        Skip to main content
+    </a>
+
+    <!-- Top Navigation Bar -->
+    <nav class="bg-primary-dark py-3 px-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center text-white text-sm">
+            <div>MacDonald Law Office — Smiths Falls, Ontario</div>
+            <div>Call us: (613) 283-0012</div>
+        </div>
+    </nav>
+
+    <!-- Sticky Navigation -->
+    <nav class="nav-sticky">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="logo-box btn-transition">M</a>
+
+            <!-- Brand Name -->
+            <div class="ml-4 hidden sm:block">
+                <div class="font-serif text-lg font-semibold text-primary">MacDonald</div>
+                <div class="font-sans text-xs tracking-widest text-warm-500">LAW OFFICE</div>
             </div>
-            <div class="header-phone">
-                <a href="tel:6132830012">(613) 283-0012</a>
+
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav flex items-center gap-8 ml-auto">
+                <a href="index.html" class="nav-link text-primary font-medium">Home</a>
+                <a href="#" class="nav-link text-primary font-medium">About</a>
+                <a href="#" class="nav-link text-primary font-medium">Practice Areas</a>
+                <a href="contact.html" class="nav-link active text-primary font-medium">Contact</a>
             </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
+
+            <!-- CTA Button (Desktop) -->
+            <button class="hidden md:block btn-primary btn-transition ml-8">
+                (613) 283-0012
+                <svg data-lucide="arrow-right" class="w-4 h-4" stroke-width="2.5"></svg>
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu text-primary" id="mobile-menu-toggle">
+                <svg data-lucide="menu" class="w-6 h-6" stroke-width="2.5"></svg>
             </button>
         </div>
-        <nav class="main-nav" id="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="practice-areas.html">Practice Areas</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>MacDonald Law Office</p>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden mobile-menu bg-cream border-b border-warm-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4">
+            <a href="index.html" class="nav-link text-primary font-medium">Home</a>
+            <a href="#" class="nav-link text-primary font-medium">About</a>
+            <a href="#" class="nav-link text-primary font-medium">Practice Areas</a>
+            <a href="contact.html" class="nav-link active text-primary font-medium">Contact</a>
+            <button class="btn-primary btn-transition w-full justify-center">
+                (613) 283-0012
+                <svg data-lucide="arrow-right" class="w-4 h-4" stroke-width="2.5"></svg>
+            </button>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-grid">
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="bg-primary py-16 sm:py-24 text-center text-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-accent text-sm font-semibold tracking-widest uppercase mb-4">Get in Touch</div>
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Contact</h1>
+                <p class="text-lg text-gray-200 max-w-2xl mx-auto">
+                    We're a small office &mdash; and that's on purpose. All inquiries are treated in confidence.
+                </p>
+            </div>
+        </section>
 
-                <div class="contact-info">
-                    <h3>Office Address</h3>
-                    <p>94 Beckwith Street North<br>Smiths Falls, Ontario K7A 2C1</p>
-                    <p><strong>Phone:</strong> <a href="tel:6132830012">(613) 283-0012</a></p>
-                    <p><strong>Fax:</strong> (613) 706-3339</p>
-                    <p><strong>Email:</strong> <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a></p>
-                    <p><strong>Office Hours</strong><br>Monday &ndash; Friday, 9:00 AM &ndash; 5:00 PM</p>
-                    <div class="urgent">
-                        For urgent matters call <a href="tel:6132830012">(613) 283-0012</a>
+        <!-- Divider -->
+        <div class="bg-cream py-8 flex justify-center">
+            <div class="divider"></div>
+        </div>
+
+        <!-- Two Column Section: Form + Contact Cards -->
+        <section class="bg-cream py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid two-column grid-cols-3 gap-8 md:gap-12">
+                    <!-- Left Column: Contact Form -->
+                    <div class="col-span-2">
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary mb-2">Send us a Message</h2>
+                        <div class="divider mb-8"></div>
+
+                        <form class="space-y-6 intersection-fade">
+                            <!-- Full Name -->
+                            <div>
+                                <label for="full-name" class="form-label">Full Name</label>
+                                <input type="text" id="full-name" name="full-name" class="form-input" placeholder="Your name" required>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div>
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div>
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="(613) 283-0012" required>
+                            </div>
+
+                            <!-- Practice Area -->
+                            <div>
+                                <label for="practice-area" class="form-label">Practice Area</label>
+                                <select id="practice-area" name="practice-area" class="form-input" required>
+                                    <option value="">Select a practice area</option>
+                                    <option value="criminal-defence">Criminal Defence</option>
+                                    <option value="real-estate">Real Estate</option>
+                                    <option value="wills-estates">Wills & Powers of Attorney</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" rows="5" class="form-input" placeholder="Tell us about your legal matter..." required></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-primary btn-transition">
+                                Send Message
+                                <svg data-lucide="arrow-right" class="w-4 h-4" stroke-width="2.5"></svg>
+                            </button>
+
+                            <!-- Confidentiality Note -->
+                            <p class="text-sm text-warm-500 mt-4">
+                                All consultations are confidential.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Right Column: Contact Information Cards -->
+                    <div class="col-span-1">
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary mb-2">Contact Info</h2>
+                        <div class="divider mb-8"></div>
+
+                        <!-- Office Address Card -->
+                        <div class="contact-card intersection-fade">
+                            <h3>Office Address</h3>
+                            <p>94 Beckwith Street North<br>Smiths Falls, Ontario K7A 2C1<br>Canada</p>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <div class="contact-card intersection-fade">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+16132830012" class="text-accent hover:text-accent-hover transition">(613) 283-0012</a></p>
+                        </div>
+
+                        <!-- Fax Card -->
+                        <div class="contact-card intersection-fade">
+                            <h3>Fax</h3>
+                            <p>(613) 706-3339</p>
+                        </div>
+
+                        <!-- Email Card -->
+                        <div class="contact-card intersection-fade">
+                            <h3>Email</h3>
+                            <p><a href="mailto:Reception@SmithsFallsLawyer.com" class="text-accent hover:text-accent-hover transition">Reception@SmithsFallsLawyer.com</a></p>
+                        </div>
+
+                        <!-- Hours Card -->
+                        <div class="contact-card intersection-fade">
+                            <h3>Business Hours</h3>
+                            <p>Monday – Friday<br>9:00 AM – 5:00 PM</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-form">
-                    <form action="mailto:Reception@SmithsFallsLawyer.com" method="POST" enctype="text/plain">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+        <!-- Map Section -->
+        <section class="bg-warm-100 py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary text-center mb-12">Find Us</h2>
 
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
-
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-
-                        <label for="preferred-contact">Preferred Contact Method</label>
-                        <select id="preferred-contact" name="preferred-contact">
-                            <option value="Phone">Phone</option>
-                            <option value="Email">Email</option>
-                        </select>
-
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                    <p class="disclaimer">Submitting this form does not create a solicitor-client relationship. Please do not include confidential or sensitive details in this message. A member of the firm will respond to confirm whether MacDonald Law Office is able to assist with your matter.</p>
+                <div class="rounded-lg overflow-hidden intersection-fade">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.5!2d-76.0233!3d44.9012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDU0JzA0LjMiTiA3NsKwMDEnMjMuOSJX!5e0!3m2!1sen!2sca!4v1"
+                        width="100%"
+                        height="400"
+                        style="border:0; border-radius: 8px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
-
             </div>
-
-            <!-- Map Embed -->
-            <div class="map-embed">
-                <iframe src="https://maps.google.com/maps?q=94+Beckwith+Street+North+Smiths+Falls+Ontario&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="MacDonald Law Office location"></iframe>
-            </div>
-
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>MacDonald Law Office</h3>
-                <address>
-                    94 Beckwith Street North<br>
-                    Smiths Falls, Ontario K7A 2C1<br>
-                    Phone: <a href="tel:6132830012">(613) 283-0012</a><br>
-                    Fax: (613) 706-3339<br>
-                    Email: <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a>
-                </address>
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand Column -->
+                <div>
+                    <div class="font-serif text-2xl font-bold mb-2">MacDonald</div>
+                    <p class="text-sm text-gray-300">A small Smiths Falls law office. Real estate, criminal defence, and wills since 2002.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="index.html" class="hover:text-accent transition">Home</a></li>
+                        <li><a href="#" class="hover:text-accent transition">About</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Practice Areas</a></li>
+                        <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Practice Areas Column -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Practice Areas</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-accent transition">Real Estate</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Criminal Defence</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Wills & Powers of Attorney</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info Column -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact</h3>
+                    <p class="text-sm text-gray-300 mb-3">
+                        <strong>94 Beckwith Street North</strong><br>
+                        Smiths Falls, Ontario K7A 2C1
+                    </p>
+                    <p class="text-sm text-gray-300 mb-2">
+                        <a href="tel:+16132830012" class="hover:text-accent transition">(613) 283-0012</a>
+                    </p>
+                    <p class="text-sm text-gray-300 mb-2">
+                        <a href="mailto:Reception@SmithsFallsLawyer.com" class="hover:text-accent transition">Reception@SmithsFallsLawyer.com</a>
+                    </p>
+                    <p class="text-sm text-gray-300">
+                        <strong>Hours:</strong> Mon–Fri, 9 AM–5 PM
+                    </p>
+                </div>
             </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="practice-areas.html">Practice Areas</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+
+            <!-- Footer Divider -->
+            <div class="border-t border-primary-light py-6">
+                <p class="text-center text-sm text-gray-300">
+                    © 2026 MacDonald Law Office. All rights reserved. | <a href="#" class="hover:text-accent transition">Privacy Policy</a>
+                </p>
             </div>
-            <div class="footer-col">
-                <h3>Office Hours</h3>
-                <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
-                <p>Available for urgent criminal matters</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 MacDonald Law Office. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Mobile Nav Toggle Script -->
+    <!-- Lucide Icons Initialization -->
     <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function () {
-            var nav = document.getElementById('main-nav');
-            var expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            nav.classList.toggle('open');
+        lucide.createIcons();
+    </script>
+
+    <!-- Intersection Observer for Fade-in Animation -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.intersection-fade').forEach(el => {
+            observer.observe(el);
         });
     </script>
 
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MacDonald Law Office — Style Guide</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT: '#1B2A4A', light: '#2A3D66', dark: '#111D35' },
+            accent:   { DEFAULT: '#B8942D', hover: '#9A7B22', light: '#D4B44A' },
+            cream:    { DEFAULT: '#FAF9F6', dark: '#F2F0EB' },
+            charcoal: { DEFAULT: '#1A1A1A' },
+            warm:     { 100: '#F7F5F0', 200: '#EDE9E0', 300: '#D4CFC4', 400: '#A9A298', 500: '#7A7267' }
+          },
+          fontFamily: {
+            serif:  ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans:   ['"DM Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'DM Sans', system-ui, sans-serif; }
+    h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .swatch {
+      width: 120px; height: 120px; border-radius: 8px;
+      display: flex; align-items: flex-end; padding: 8px;
+      font-size: 11px; font-family: 'DM Sans', sans-serif; color: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+    .swatch-dark { color: #1A1A1A; }
+    .divider { width: 48px; height: 2px; background: #B8942D; }
+    .btn-transition { transition: all 0.2s ease; }
+  </style>
+</head>
+<body class="bg-cream text-charcoal">
+
+  <!-- Header -->
+  <header class="bg-primary text-white py-8">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="font-sans text-sm tracking-[0.2em] uppercase text-warm-400 mb-2">Style Guide</p>
+      <h1 class="text-5xl font-serif font-semibold leading-tight">MacDonald Law Office</h1>
+      <p class="mt-3 text-warm-300 font-sans text-lg">Visual identity and design system</p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-16 space-y-20">
+
+    <!-- ============ COLOR PALETTE ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">01</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Colour Palette</h2>
+      <div class="divider mb-8"></div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <!-- Primary -->
+        <div>
+          <div class="swatch" style="background:#1B2A4A;">#1B2A4A</div>
+          <p class="mt-2 text-sm font-semibold">Navy Primary</p>
+          <p class="text-xs text-warm-500">Headers, nav, footer, primary text on light</p>
+        </div>
+        <!-- Primary Light -->
+        <div>
+          <div class="swatch" style="background:#2A3D66;">#2A3D66</div>
+          <p class="mt-2 text-sm font-semibold">Navy Light</p>
+          <p class="text-xs text-warm-500">Hover states, secondary backgrounds</p>
+        </div>
+        <!-- Accent Gold -->
+        <div>
+          <div class="swatch" style="background:#B8942D;">#B8942D</div>
+          <p class="mt-2 text-sm font-semibold">Gold Accent</p>
+          <p class="text-xs text-warm-500">CTAs, links, dividers, highlights</p>
+        </div>
+        <!-- Cream -->
+        <div>
+          <div class="swatch swatch-dark" style="background:#FAF9F6; border:1px solid #EDE9E0;">#FAF9F6</div>
+          <p class="mt-2 text-sm font-semibold">Cream</p>
+          <p class="text-xs text-warm-500">Primary background</p>
+        </div>
+        <!-- Warm Gray -->
+        <div>
+          <div class="swatch swatch-dark" style="background:#F2F0EB; border:1px solid #D4CFC4;">#F2F0EB</div>
+          <p class="mt-2 text-sm font-semibold">Warm Gray</p>
+          <p class="text-xs text-warm-500">Alternate section backgrounds</p>
+        </div>
+      </div>
+
+      <!-- Semantic Colors -->
+      <h3 class="text-xl font-serif font-semibold mt-12 mb-4">Semantic Colours</h3>
+      <div class="grid grid-cols-3 md:grid-cols-3 gap-6">
+        <div>
+          <div class="swatch" style="background:#2D6A4F; width:80px; height:80px;">#2D6A4F</div>
+          <p class="mt-2 text-sm font-semibold">Success</p>
+        </div>
+        <div>
+          <div class="swatch" style="background:#B8942D; width:80px; height:80px;">#B8942D</div>
+          <p class="mt-2 text-sm font-semibold">Warning</p>
+        </div>
+        <div>
+          <div class="swatch" style="background:#9B2C2C; width:80px; height:80px;">#9B2C2C</div>
+          <p class="mt-2 text-sm font-semibold">Error</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TYPOGRAPHY ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">02</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Typography</h2>
+      <div class="divider mb-8"></div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Heading Font -->
+        <div>
+          <p class="text-xs tracking-[0.2em] uppercase text-warm-500 font-semibold mb-4">Headings — Cormorant Garamond</p>
+          <p class="font-serif text-7xl font-semibold leading-none text-primary mb-3">Display</p>
+          <p class="font-serif text-5xl font-semibold leading-tight text-primary mb-3">Heading 1</p>
+          <p class="font-serif text-4xl font-semibold leading-tight text-primary mb-3">Heading 2</p>
+          <p class="font-serif text-2xl font-semibold leading-snug text-primary mb-3">Heading 3</p>
+          <p class="font-serif text-xl font-medium leading-snug text-primary mb-3">Heading 4</p>
+        </div>
+        <!-- Body Font -->
+        <div>
+          <p class="text-xs tracking-[0.2em] uppercase text-warm-500 font-semibold mb-4">Body — DM Sans</p>
+          <p class="text-lg leading-relaxed mb-4">
+            Body Large — MacDonald Law Office provides trusted legal counsel in criminal defence, real estate, and estate planning. Since 2002, serving Smiths Falls and Eastern Ontario.
+          </p>
+          <p class="text-base leading-relaxed mb-4 text-warm-500">
+            Body Regular — The firm emphasizes a client-centered approach with straightforward communication, transparent pricing, and flexible scheduling.
+          </p>
+          <p class="text-sm leading-relaxed mb-4 text-warm-400">
+            Small — Available for consultations Monday through Friday, 9:00 AM to 5:00 PM.
+          </p>
+          <p class="text-xs tracking-[0.15em] uppercase font-semibold text-accent">
+            Label / Overline — Practice Areas
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUTTONS ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">03</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Buttons</h2>
+      <div class="divider mb-8"></div>
+
+      <div class="space-y-8">
+        <!-- Primary -->
+        <div>
+          <p class="text-xs tracking-[0.15em] uppercase text-warm-500 font-semibold mb-3">Primary</p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="#" class="btn-transition inline-flex items-center gap-2 bg-accent text-white font-sans font-semibold text-sm tracking-wide px-8 py-4 rounded hover:bg-accent-hover hover:scale-[1.02]">
+              Book a Consultation
+              <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+            </a>
+            <a href="#" class="btn-transition inline-flex items-center gap-2 bg-primary text-white font-sans font-semibold text-sm tracking-wide px-8 py-4 rounded hover:bg-primary-light hover:scale-[1.02]">
+              Book a Consultation
+              <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div>
+          <p class="text-xs tracking-[0.15em] uppercase text-warm-500 font-semibold mb-3">Secondary / Outline</p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <a href="#" class="btn-transition inline-flex items-center gap-2 border-2 border-primary text-primary font-sans font-semibold text-sm tracking-wide px-8 py-3.5 rounded hover:bg-primary hover:text-white">
+              Learn More
+            </a>
+            <a href="#" class="btn-transition inline-flex items-center gap-2 border-2 border-accent text-accent font-sans font-semibold text-sm tracking-wide px-8 py-3.5 rounded hover:bg-accent hover:text-white">
+              View Practice Areas
+            </a>
+          </div>
+        </div>
+
+        <!-- Ghost / Text -->
+        <div>
+          <p class="text-xs tracking-[0.15em] uppercase text-warm-500 font-semibold mb-3">Ghost / Text Link</p>
+          <div class="flex flex-wrap gap-6 items-center">
+            <a href="#" class="btn-transition inline-flex items-center gap-1.5 text-accent font-sans font-semibold text-sm hover:text-accent-hover border-b-2 border-transparent hover:border-accent">
+              Read more
+              <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+            </a>
+            <a href="#" class="btn-transition inline-flex items-center gap-1.5 text-primary font-sans font-semibold text-sm hover:text-primary-light border-b-2 border-transparent hover:border-primary">
+              Contact us
+              <i data-lucide="phone" style="width:14px;height:14px;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARDS ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">04</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Cards</h2>
+      <div class="divider mb-8"></div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="btn-transition bg-white rounded-lg border border-warm-200 p-8 hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+            <i data-lucide="scale" class="text-primary" style="width:22px;height:22px;"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-primary mb-3">Criminal Defence</h3>
+          <p class="text-sm text-warm-500 leading-relaxed mb-5">Over two decades of courtroom experience defending clients facing Criminal Code and Provincial Act charges.</p>
+          <span class="btn-transition inline-flex items-center gap-1.5 text-accent font-semibold text-sm group-hover:gap-2.5">
+            Learn more <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </span>
+        </div>
+        <!-- Card 2 -->
+        <div class="btn-transition bg-white rounded-lg border border-warm-200 p-8 hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+            <i data-lucide="home" class="text-primary" style="width:22px;height:22px;"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-primary mb-3">Real Estate Law</h3>
+          <p class="text-sm text-warm-500 leading-relaxed mb-5">Residential conveyancing for purchases, sales, and mortgages — navigating every step of the transaction.</p>
+          <span class="btn-transition inline-flex items-center gap-1.5 text-accent font-semibold text-sm group-hover:gap-2.5">
+            Learn more <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </span>
+        </div>
+        <!-- Card 3 -->
+        <div class="btn-transition bg-white rounded-lg border border-warm-200 p-8 hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
+            <i data-lucide="scroll-text" class="text-primary" style="width:22px;height:22px;"></i>
+          </div>
+          <h3 class="font-serif text-xl font-semibold text-primary mb-3">Wills & Estates</h3>
+          <p class="text-sm text-warm-500 leading-relaxed mb-5">Wills, powers of attorney, and estate planning to protect your family and legacy.</p>
+          <span class="btn-transition inline-flex items-center gap-1.5 text-accent font-semibold text-sm group-hover:gap-2.5">
+            Learn more <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORM ELEMENTS ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">05</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Form Elements</h2>
+      <div class="divider mb-8"></div>
+
+      <div class="max-w-lg space-y-6">
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-1.5">Full Name</label>
+          <input type="text" placeholder="e.g. Jane Smith" class="w-full px-4 py-3 rounded border border-warm-300 bg-white text-charcoal text-sm placeholder:text-warm-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-1.5">Email Address</label>
+          <input type="email" placeholder="jane@example.com" class="w-full px-4 py-3 rounded border border-warm-300 bg-white text-charcoal text-sm placeholder:text-warm-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-1.5">Practice Area</label>
+          <select class="w-full px-4 py-3 rounded border border-warm-300 bg-white text-charcoal text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all">
+            <option>Select a practice area</option>
+            <option>Criminal Defence</option>
+            <option>Real Estate</option>
+            <option>Wills & Estates</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-primary mb-1.5">Message</label>
+          <textarea rows="4" placeholder="Briefly describe your legal matter..." class="w-full px-4 py-3 rounded border border-warm-300 bg-white text-charcoal text-sm placeholder:text-warm-400 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all resize-y"></textarea>
+        </div>
+        <button class="btn-transition bg-accent text-white font-sans font-semibold text-sm tracking-wide px-8 py-4 rounded hover:bg-accent-hover hover:scale-[1.02] w-full md:w-auto">
+          Send Message
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ SPACING ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">06</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Spacing Scale</h2>
+      <div class="divider mb-8"></div>
+
+      <div class="space-y-3">
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">4px</span>
+          <div class="h-4 rounded" style="width:4px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">8px</span>
+          <div class="h-4 rounded" style="width:8px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">16px</span>
+          <div class="h-4 rounded" style="width:16px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">24px</span>
+          <div class="h-4 rounded" style="width:24px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">32px</span>
+          <div class="h-4 rounded" style="width:32px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">48px</span>
+          <div class="h-4 rounded" style="width:48px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">64px</span>
+          <div class="h-4 rounded" style="width:64px; background:#B8942D;"></div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-xs text-warm-500 w-16 text-right font-mono">96px</span>
+          <div class="h-4 rounded" style="width:96px; background:#B8942D;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MINI HERO SAMPLE ============ -->
+    <section>
+      <p class="text-xs tracking-[0.2em] uppercase text-accent font-semibold mb-2">07</p>
+      <h2 class="text-3xl font-serif font-semibold mb-2">Sample Hero Section</h2>
+      <div class="divider mb-8"></div>
+    </section>
+  </main>
+
+  <!-- Sample Hero -->
+  <div class="bg-primary text-white py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xs tracking-[0.25em] uppercase text-accent font-semibold mb-6">Established 2002 &mdash; Smiths Falls, Ontario</p>
+      <h1 class="font-serif text-6xl md:text-7xl font-semibold leading-none mb-6">Counsel You<br>Can Count On</h1>
+      <p class="text-lg text-warm-300 max-w-2xl mx-auto mb-10 leading-relaxed">Criminal defence, real estate transactions, and estate planning — over two decades of focused legal practice serving Eastern Ontario.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="btn-transition inline-flex items-center justify-center gap-2 bg-accent text-white font-sans font-semibold text-sm tracking-wide px-8 py-4 rounded hover:bg-accent-hover hover:scale-[1.02]">
+          Book a Consultation
+          <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+        </a>
+        <a href="#" class="btn-transition inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-sans font-semibold text-sm tracking-wide px-8 py-3.5 rounded hover:bg-white/10">
+          <i data-lucide="phone" style="width:16px;height:16px;"></i>
+          (613) 283-0012
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-12"></div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
