@@ -1,170 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MacDonald Law Office practice areas: criminal defence, real estate law, and wills and estates. Serving Smiths Falls and Eastern Ontario.">
-    <title>Practice Areas | MacDonald Law Office</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MacDonald Law Office practises criminal defence, real estate law, and wills in Smiths Falls, Ontario. Over 20 years of focused legal experience. (613) 283-0012.">
+  <title>Practice Areas — Criminal Defence, Real Estate & Wills | MacDonald Law Office, Smiths Falls</title>
+
+  <!-- Tailwind CSS with custom colors -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#1B2A4A',
+              light: '#2A3D66',
+              dark: '#111D35',
+            },
+            accent: {
+              DEFAULT: '#B8942D',
+              hover: '#9A7B22',
+              light: '#D4B44A',
+            },
+            cream: {
+              DEFAULT: '#FAF9F6',
+              dark: '#F2F0EB',
+            },
+            charcoal: {
+              DEFAULT: '#1A1A1A',
+            },
+            warm: {
+              100: '#F7F5F0',
+              200: '#EDE9E0',
+              300: '#D4CFC4',
+              400: '#A9A298',
+              500: '#7A7267',
+            },
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .btn-transition {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #B8942D;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: #B8942D;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background-color: #B8942D;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: white;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #B8942D;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .service-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(27, 42, 74, 0.1);
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans text-charcoal bg-cream">
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">MacDonald Law Office</a>
-            </div>
-            <div class="header-phone">
-                <a href="tel:6132830012">(613) 283-0012</a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-                <span class="hamburger"></span>
-            </button>
-        </div>
-        <nav class="main-nav" id="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="practice-areas.html" class="active">Practice Areas</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Practice Areas</h1>
-            <p>Criminal Defence | Real Estate | Wills &amp; Estates</p>
+  <!-- Top Bar -->
+  <div class="bg-primary-dark text-white text-sm py-2">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <p>Serving Smiths Falls & Eastern Ontario</p>
+      <p>(613) 283-0012</p>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div class="w-12 h-12 border-2 border-primary flex items-center justify-center">
+            <span class="text-primary font-serif font-bold text-xl">M</span>
+          </div>
+          <div>
+            <div class="text-primary font-serif text-lg font-bold">MacDonald</div>
+            <div class="text-xs text-warm-400 tracking-wide">Law Office</div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav flex items-center gap-8">
+          <a href="index.html" class="nav-link text-primary hover:text-accent transition-colors">Home</a>
+          <a href="index.html#about" class="nav-link text-primary hover:text-accent transition-colors">About</a>
+          <a href="practice-areas.html" class="nav-link active text-accent">Practice Areas</a>
+          <a href="index.html#contact" class="nav-link text-primary hover:text-accent transition-colors">Contact</a>
+          <button class="btn-transition bg-accent hover:bg-accent-hover text-white px-6 py-2 text-sm font-medium">
+            Book Consultation
+          </button>
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu md:hidden text-primary" id="mobile-menu-btn" aria-label="Toggle menu">
+          <svg data-lucide="menu" class="w-6 h-6"></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation (hidden by default) -->
+      <div class="mobile-menu md:hidden pb-4 hidden" id="mobile-nav">
+        <a href="index.html" class="block py-2 text-primary hover:text-accent">Home</a>
+        <a href="index.html#about" class="block py-2 text-primary hover:text-accent">About</a>
+        <a href="practice-areas.html" class="block py-2 text-accent font-medium">Practice Areas</a>
+        <a href="index.html#contact" class="block py-2 text-primary hover:text-accent">Contact</a>
+        <button class="w-full mt-4 bg-accent hover:bg-accent-hover text-white px-6 py-2 text-sm font-medium">
+          Book Consultation
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="bg-cream py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="text-accent font-medium text-sm uppercase tracking-wider mb-4">Our Services</p>
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+            What We Do
+          </h1>
+          <p class="text-lg text-warm-500 leading-relaxed">
+            Three practice areas, one small office, over twenty years. We keep things focused so we can do them well.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Practice Areas Content -->
-    <section class="content">
-        <div class="container">
+    <!-- Real Estate Law Section -->
+    <section id="real-estate" class="bg-cream py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-            <div class="practice-area" id="criminal">
-                <h2>Criminal Defence</h2>
-                <p>MacDonald Law Office provides experienced defence representation for individuals facing criminal charges across Eastern Ontario. Mark P. MacDonald appears regularly in the Ontario Court of Justice and Superior Court of Justice in Perth, Brockville, and beyond.</p>
-                <h3>Areas of Defence Include:</h3>
-                <ul>
-                    <li>Impaired driving / over 80 / refusal (DUI)</li>
-                    <li>Assault and domestic assault</li>
-                    <li>Theft, fraud, and property offences</li>
-                    <li>Drug offences (possession, trafficking)</li>
-                    <li>Weapons offences</li>
-                    <li>Bail hearings (available 24/7)</li>
-                    <li>Youth criminal justice matters</li>
-                    <li>Regulatory and provincial offences</li>
-                    <li>Appeals</li>
-                    <li>Record suspensions (pardons)</li>
-                </ul>
-                <div class="highlight">
-                    <h3>What to Expect:</h3>
-                    <p>Every case begins with a thorough review of the evidence, including police reports, witness statements, and disclosure materials. Mark P. MacDonald will explain the strengths and weaknesses of your case honestly and develop a strategy aimed at the best possible outcome — whether that means negotiation, a trial, or a withdrawal of charges.</p>
+          <div class="fade-in">
+            <div class="bg-cream-dark p-8 rounded-lg border border-primary border-opacity-20">
+              <h3 class="font-serif text-2xl font-bold text-primary mb-6">The Transaction Process</h3>
+
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">From Offer to Close</h4>
+                  <p class="text-charcoal text-sm">We guide you through every step, from title search through closing, keeping the transaction clear and efficient.</p>
                 </div>
-                <p>If you have been charged with a criminal offence, contact MacDonald Law Office immediately. Early legal advice protects your rights.</p>
-            </div>
 
-            <div class="practice-area" id="real-estate">
-                <h2>Real Estate Law</h2>
-                <p>MacDonald Law Office handles residential and commercial real estate transactions throughout Eastern Ontario. The firm works closely with real estate agents, mortgage brokers, and lenders to ensure a smooth closing.</p>
-                <h3>Services Include:</h3>
-                <ul>
-                    <li>Purchase and sale of residential property</li>
-                    <li>Purchase and sale of commercial property</li>
-                    <li>Mortgage refinancing and transfers</li>
-                    <li>Title searches and title insurance</li>
-                    <li>Transfers of title between family members</li>
-                    <li>Severances and land division applications</li>
-                    <li>Easements and rights of way</li>
-                </ul>
-                <div class="highlight">
-                    <h3>What to Expect:</h3>
-                    <p>When you retain MacDonald Law Office for a real estate transaction, you will receive clear communication about timelines, costs, and any issues that arise during the title search. The firm aims to make the closing process straightforward and stress-free.</p>
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Professional Coordination</h4>
+                  <p class="text-charcoal text-sm">We work seamlessly with your realtor, lender, and title insurer to ensure all parties are aligned.</p>
                 </div>
-            </div>
 
-            <div class="practice-area" id="wills">
-                <h2>Wills &amp; Estates</h2>
-                <p>Planning for the future protects your family and ensures your wishes are honoured. MacDonald Law Office provides practical, plain-language estate planning services tailored to your circumstances.</p>
-                <h3>Services Include:</h3>
-                <ul>
-                    <li>Last wills and testaments</li>
-                    <li>Powers of attorney for property</li>
-                    <li>Powers of attorney for personal care</li>
-                    <li>Estate planning and asset protection</li>
-                    <li>Estate administration and probate</li>
-                    <li>Estate trustee applications</li>
-                    <li>Dependant support claims</li>
-                </ul>
-                <div class="highlight">
-                    <h3>What to Expect:</h3>
-                    <p>Mark P. MacDonald will meet with you to understand your family situation, assets, and goals, and then prepare documents that reflect your wishes clearly and in compliance with Ontario law. If you are dealing with the estate of a loved one, the firm can guide you through the probate and administration process step by step.</p>
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Teraview Expertise</h4>
+                  <p class="text-charcoal text-sm">Electronic registration through Teraview streamlines closing and reduces delays in land transfer.</p>
                 </div>
-            </div>
 
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Title Protection</h4>
+                  <p class="text-charcoal text-sm">We advise on title insurance options to protect your investment for years to come.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-in" style="animation-delay: 0.2s;">
+            <p class="text-accent font-medium text-sm uppercase tracking-wider mb-4">Real Estate Law</p>
+            <h2 class="font-serif text-5xl sm:text-6xl font-bold text-primary mb-8 leading-tight">
+              Clear Navigation of Property Transactions
+            </h2>
+
+            <div class="divider mb-8"></div>
+
+            <p class="text-lg text-warm-500 mb-8 leading-relaxed">
+              Whether you're buying your first home, selling a property, or refinancing a mortgage, we provide experienced residential conveyancing services that make the process straightforward and stress-free.
+            </p>
+
+            <h3 class="font-serif text-2xl font-bold text-primary mb-6">Our Services</h3>
+            <ul class="space-y-4 mb-8">
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Residential purchases and sales</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Title searches and title insurance</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Mortgage refinancing</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Closing representation for vendors and purchasers</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Teraview electronic registration</span>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Criminal Defence Section -->
+    <section id="criminal" class="bg-primary py-16 sm:py-20 lg:py-24 text-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+          <div class="fade-in">
+            <p class="text-accent font-medium text-sm uppercase tracking-wider mb-4">Criminal Defence</p>
+            <h2 class="font-serif text-5xl sm:text-6xl font-bold text-cream mb-8 leading-tight">
+              Committed Courtroom Advocacy
+            </h2>
+
+            <div class="divider mb-8"></div>
+
+            <p class="text-lg text-cream mb-8 leading-relaxed">
+              With over twenty years of courtroom experience, Mark provides vigorous and practical defence in all areas of criminal law. He appears regularly before the Ontario Court of Justice in Perth, Brockville, and regional courts. When you hire Mark for a criminal matter, you get Mark &mdash; from first appearance through to resolution. Member of the Legal Aid Ontario Extremely Serious Matters Panel.
+            </p>
+
+            <h3 class="font-serif text-2xl font-bold text-cream mb-6">Our Services</h3>
+            <ul class="space-y-4 mb-8">
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-cream">All Criminal Code and provincial offences</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-cream">Bail hearings, trial advocacy, and sentencing</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-cream">Section 810 recognizance matters</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-cream">Extremely Serious Matters Panel member</span>
+              </li>
+            </ul>
+
+            <p class="text-cream mb-6">
+              Selected Legal Aid Ontario certificates accepted for criminal matters.
+            </p>
+          </div>
+
+          <div class="fade-in" style="animation-delay: 0.2s;">
+            <div class="bg-primary-light p-8 rounded-lg border border-accent border-opacity-30">
+              <h3 class="font-serif text-2xl font-bold text-cream mb-6">Why Choose Us</h3>
+
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Experienced Advocacy</h4>
+                  <p class="text-cream text-sm">Two decades of practical courtroom experience navigating complex criminal matters.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Clear Communication</h4>
+                  <p class="text-cream text-sm">We explain your options plainly so you can make informed decisions about your case.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">ESM Panel Member</h4>
+                  <p class="text-cream text-sm">Member of the Legal Aid Ontario Extremely Serious Matters Panel. Selected Legal Aid certificates accepted.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wills & Powers of Attorney Section -->
+    <section id="wills" class="bg-cream-dark py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+          <div class="fade-in">
+            <p class="text-accent font-medium text-sm uppercase tracking-wider mb-4">Wills & Powers of Attorney</p>
+            <h2 class="font-serif text-5xl sm:text-6xl font-bold text-primary mb-8 leading-tight">
+              Protect Your Family &amp; Legacy
+            </h2>
+
+            <div class="divider mb-8"></div>
+
+            <p class="text-lg text-warm-500 mb-8 leading-relaxed">
+              Properly drafted wills and powers of attorney ensure that your wishes are clearly documented and legally binding. We help you protect your family and assets through careful planning.
+            </p>
+
+            <h3 class="font-serif text-2xl font-bold text-primary mb-6">Our Services</h3>
+            <ul class="space-y-4 mb-8">
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Last wills and testaments</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Powers of attorney for property</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Powers of attorney for personal care</span>
+              </li>
+              <li class="flex gap-4">
+                <svg data-lucide="check-circle-2" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></svg>
+                <span class="text-charcoal">Codicils and will amendments</span>
+              </li>
+            </ul>
+
+            <p class="text-warm-500">
+              We take the time to understand your family situation and goals so that your will reflects your values and protects the people you care about most.
+            </p>
+          </div>
+
+          <div class="fade-in" style="animation-delay: 0.2s;">
+            <div class="bg-white p-8 rounded-lg border border-primary border-opacity-20">
+              <h3 class="font-serif text-2xl font-bold text-primary mb-6">Why Proper Planning Matters</h3>
+
+              <div class="space-y-6">
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Clarity for Your Family</h4>
+                  <p class="text-charcoal text-sm">A clear will prevents confusion and potential disputes among heirs, giving your family peace of mind.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Legal Protection</h4>
+                  <p class="text-charcoal text-sm">Properly drafted documents are less likely to be challenged and provide enforceable protection for your family.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Incapacity Planning</h4>
+                  <p class="text-charcoal text-sm">Powers of attorney ensure your wishes are honoured if you become unable to make decisions.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Tax Considerations</h4>
+                  <p class="text-charcoal text-sm">Thoughtful planning can minimize tax burden on your beneficiaries.</p>
+                </div>
+
+                <div>
+                  <h4 class="font-serif text-lg text-accent mb-2">Periodic Review</h4>
+                  <p class="text-charcoal text-sm">Life changes. We can help you update your will and powers of attorney as your circumstances evolve.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA Banner -->
-    <section class="cta-banner">
-        <div class="container">
-            <h2>Need Legal Help?</h2>
-            <p>Contact MacDonald Law Office today for a confidential consultation.</p>
-            <p class="cta-contact">(613) 283-0012 | Reception@SmithsFallsLawyer.com</p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    <section class="bg-accent py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-6">
+          Ready to Discuss Your Legal Needs?
+        </h2>
+        <p class="text-lg text-white mb-8 opacity-95 max-w-2xl mx-auto">
+          Give us a call or send a message. We're a small office &mdash; and that's on purpose.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button class="btn-transition bg-white text-accent hover:bg-cream px-8 py-3 font-medium rounded transition-colors">
+            Book Consultation
+          </button>
+          <a href="tel:+16132830012" class="btn-transition border-2 border-white text-white hover:bg-white hover:text-accent px-8 py-3 font-medium rounded transition-colors inline-block text-center">
+            (613) 283-0012
+          </a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>MacDonald Law Office</h3>
-                <address>
-                    94 Beckwith Street North<br>
-                    Smiths Falls, Ontario K7A 2C1<br>
-                    Phone: <a href="tel:6132830012">(613) 283-0012</a><br>
-                    Fax: (613) 706-3339<br>
-                    Email: <a href="mailto:Reception@SmithsFallsLawyer.com">Reception@SmithsFallsLawyer.com</a>
-                </address>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="practice-areas.html">Practice Areas</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Office Hours</h3>
-                <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
-                <p>Available for urgent criminal matters</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 MacDonald Law Office. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-primary text-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 
-    <!-- Mobile Nav Toggle Script -->
-    <script>
-        document.querySelector('.nav-toggle').addEventListener('click', function () {
-            var nav = document.getElementById('main-nav');
-            var expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            nav.classList.toggle('open');
-        });
-    </script>
+        <!-- Brand Column -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">
+              <span class="text-accent font-serif font-bold text-lg">M</span>
+            </div>
+            <div>
+              <div class="text-accent font-serif font-bold">MacDonald</div>
+              <div class="text-xs text-warm-300">Law Office</div>
+            </div>
+          </div>
+          <p class="text-sm text-warm-300 mt-4">
+            Focused legal expertise serving Smiths Falls and Eastern Ontario.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="font-serif text-lg font-bold text-cream mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="text-warm-300 hover:text-accent transition-colors">Home</a></li>
+            <li><a href="index.html#about" class="text-warm-300 hover:text-accent transition-colors">About</a></li>
+            <li><a href="practice-areas.html" class="text-accent font-medium">Practice Areas</a></li>
+            <li><a href="index.html#contact" class="text-warm-300 hover:text-accent transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Practice Areas -->
+        <div>
+          <h3 class="font-serif text-lg font-bold text-cream mb-4">Practice Areas</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#real-estate" class="text-warm-300 hover:text-accent transition-colors">Real Estate Law</a></li>
+            <li><a href="#criminal" class="text-warm-300 hover:text-accent transition-colors">Criminal Defence</a></li>
+            <li><a href="#wills" class="text-warm-300 hover:text-accent transition-colors">Wills & Powers of Attorney</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="font-serif text-lg font-bold text-cream mb-4">Contact</h3>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="tel:+16132830012" class="text-warm-300 hover:text-accent transition-colors">
+                (613) 283-0012
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Reception@SmithsFallsLawyer.com" class="text-warm-300 hover:text-accent transition-colors">
+                Reception@SmithsFallsLawyer.com
+              </a>
+            </li>
+            <li class="text-warm-300">
+              Smiths Falls, Ontario
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-primary-light pt-8 text-center text-sm text-warm-300">
+        <p>&copy; 2024 MacDonald Law Office. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+
+    // Fade-in Animation with IntersectionObserver
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    fadeInElements.forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
