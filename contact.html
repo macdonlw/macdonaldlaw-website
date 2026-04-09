@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.tailwindcss.com unpkg.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data:; frame-src www.google.com; connect-src 'self' formspree.io;">
     <meta name="description" content="Contact MacDonald Law Office at 94 Beckwith Street North, Smiths Falls, Ontario. Call (613) 283-0012 for criminal defence, real estate, or wills consultations.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://macdonaldlaw.ca/contact.html">
     <title>Contact MacDonald Law Office — Smiths Falls Criminal & Real Estate Lawyer</title>
 
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact MacDonald Law Office — Smiths Falls">
+    <meta property="og:description" content="Get in touch for criminal defence, real estate, or wills consultations. Call (613) 283-0012 or send us a message.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://macdonaldlaw.ca/contact.html">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact MacDonald Law Office",
+      "url": "https://macdonaldlaw.ca/contact.html",
+      "mainEntity": {
+        "@type": "LegalService",
+        "name": "MacDonald Law Office",
+        "telephone": "+16132830012",
+        "email": "Reception@SmithsFallsLawyer.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "94 Beckwith Street North",
+          "addressLocality": "Smiths Falls",
+          "addressRegion": "ON",
+          "postalCode": "K7A 2C1",
+          "addressCountry": "CA"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      }
+    }
+    </script>
+
     <!-- Tailwind CSS via CDN with custom colors -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -51,7 +90,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons via CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
 
     <style>
         body {
@@ -242,7 +281,20 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Darken accent text on light backgrounds to meet WCAG AA 4.5:1 contrast */
+        .bg-cream .text-accent, .bg-cream-dark .text-accent, .bg-white .text-accent,
+        .bg-warm-100 .text-accent, section:not(.bg-primary):not(.bg-primary-dark):not(.bg-accent) .text-accent {
+          color: #866812;
+        }
     </style>
+    <!-- Analytics: Uncomment one of the following when ready.
+         Option A — Plausible (privacy-friendly, no cookies, GDPR-compliant):
+         <script defer data-domain="macdonaldlaw.ca" src="https://plausible.io/js/script.js"></script>
+
+         Option B — Google Analytics 4:
+         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+         <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    -->
 </head>
 <body class="bg-cream text-charcoal">
     <!-- Skip to main content link -->
@@ -273,8 +325,8 @@
             <!-- Desktop Navigation -->
             <div class="desktop-nav flex items-center gap-8 ml-auto">
                 <a href="index.html" class="nav-link text-primary font-medium">Home</a>
-                <a href="#" class="nav-link text-primary font-medium">About</a>
-                <a href="#" class="nav-link text-primary font-medium">Practice Areas</a>
+                <a href="about.html" class="nav-link text-primary font-medium">About</a>
+                <a href="practice-areas.html" class="nav-link text-primary font-medium">Practice Areas</a>
                 <a href="contact.html" class="nav-link active text-primary font-medium">Contact</a>
             </div>
 
@@ -295,8 +347,8 @@
     <div id="mobile-menu" class="hidden mobile-menu bg-cream border-b border-warm-300">
         <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-4">
             <a href="index.html" class="nav-link text-primary font-medium">Home</a>
-            <a href="#" class="nav-link text-primary font-medium">About</a>
-            <a href="#" class="nav-link text-primary font-medium">Practice Areas</a>
+            <a href="about.html" class="nav-link text-primary font-medium">About</a>
+            <a href="practice-areas.html" class="nav-link text-primary font-medium">Practice Areas</a>
             <a href="contact.html" class="nav-link active text-primary font-medium">Contact</a>
             <button class="btn-primary btn-transition w-full justify-center">
                 (613) 283-0012
@@ -331,7 +383,25 @@
                         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary mb-2">Send us a Message</h2>
                         <div class="divider mb-8"></div>
 
-                        <form class="space-y-6 intersection-fade">
+                        <!-- Success Message (hidden by default) -->
+                        <div id="form-success" class="hidden bg-green-50 border border-green-300 rounded p-6 mb-6 intersection-fade">
+                            <h3 class="font-serif text-xl font-semibold text-green-800 mb-2">Message Sent</h3>
+                            <p class="text-green-700 text-sm">Thank you for reaching out. We'll respond within one business day.</p>
+                        </div>
+
+                        <!-- Error Message (hidden by default) -->
+                        <div id="form-error" class="hidden bg-red-50 border border-red-300 rounded p-6 mb-6 intersection-fade">
+                            <h3 class="font-serif text-xl font-semibold text-red-800 mb-2">Something Went Wrong</h3>
+                            <p class="text-red-700 text-sm">Please call us directly at <a href="tel:+16132830012" class="underline">(613) 283-0012</a> or email <a href="mailto:Reception@SmithsFallsLawyer.com" class="underline">Reception@SmithsFallsLawyer.com</a>.</p>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6 intersection-fade" action="https://formspree.io/f/mnjoyoza" method="POST" novalidate>
+                            <!-- Honeypot field — hidden from humans, catches bots -->
+                            <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                <label for="website">Leave this blank</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
                             <!-- Full Name -->
                             <div>
                                 <label for="full-name" class="form-label">Full Name</label>
@@ -455,8 +525,8 @@
                     <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
                     <ul class="space-y-2 text-sm text-gray-300">
                         <li><a href="index.html" class="hover:text-accent transition">Home</a></li>
-                        <li><a href="#" class="hover:text-accent transition">About</a></li>
-                        <li><a href="#" class="hover:text-accent transition">Practice Areas</a></li>
+                        <li><a href="about.html" class="hover:text-accent transition">About</a></li>
+                        <li><a href="practice-areas.html" class="hover:text-accent transition">Practice Areas</a></li>
                         <li><a href="contact.html" class="hover:text-accent transition">Contact</a></li>
                     </ul>
                 </div>
@@ -465,9 +535,9 @@
                 <div>
                     <h3 class="font-semibold text-lg mb-4">Practice Areas</h3>
                     <ul class="space-y-2 text-sm text-gray-300">
-                        <li><a href="#" class="hover:text-accent transition">Real Estate</a></li>
-                        <li><a href="#" class="hover:text-accent transition">Criminal Defence</a></li>
-                        <li><a href="#" class="hover:text-accent transition">Wills & Powers of Attorney</a></li>
+                        <li><a href="practice-areas.html#real-estate" class="hover:text-accent transition">Real Estate</a></li>
+                        <li><a href="practice-areas.html#criminal" class="hover:text-accent transition">Criminal Defence</a></li>
+                        <li><a href="practice-areas.html#wills" class="hover:text-accent transition">Wills & Powers of Attorney</a></li>
                     </ul>
                 </div>
 
@@ -493,24 +563,17 @@
             <!-- Footer Divider -->
             <div class="border-t border-primary-light py-6">
                 <p class="text-center text-sm text-gray-300">
-                    © 2026 MacDonald Law Office. All rights reserved. | <a href="#" class="hover:text-accent transition">Privacy Policy</a>
+                    &copy; 2025 MacDonald Law Office. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Lucide Icons Initialization -->
     <script>
+        // Initialize Lucide icons
         lucide.createIcons();
-    </script>
 
-    <!-- Intersection Observer for Fade-in Animation -->
-    <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for fade-in animation
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -518,26 +581,100 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.intersection-fade').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+        document.querySelectorAll('.intersection-fade').forEach(el => observer.observe(el));
 
-    <!-- Mobile Menu Toggle -->
-    <script>
+        // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Close menu when link is clicked
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Contact form handling
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Honeypot check — if filled, silently reject
+            if (document.getElementById('website').value) {
+                successMsg.classList.remove('hidden');
+                form.classList.add('hidden');
+                return;
+            }
+
+            // Gather field values
+            const name = document.getElementById('full-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const area = document.getElementById('practice-area').value;
+            const message = document.getElementById('message').value.trim();
+
+            // Basic validation
+            if (!name || !email || !phone || !area || !message) {
+                errorMsg.textContent = 'Please fill in all required fields.';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorMsg.classList.remove('hidden');
+                errorMsg.querySelector('p').textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Submit via Formspree (replace YOUR_FORM_ID with your Formspree endpoint)
+            // To set up: visit https://formspree.io, create a free form, and replace the URL below.
+            const formAction = form.getAttribute('action');
+
+            if (formAction.includes('YOUR_FORM_ID')) {
+                // Formspree not configured — fall back to mailto
+                const subject = encodeURIComponent('Website Inquiry — ' + area);
+                const body = encodeURIComponent(
+                    'Name: ' + name + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Phone: ' + phone + '\n' +
+                    'Practice Area: ' + area + '\n\n' +
+                    message
+                );
+                window.location.href = 'mailto:Reception@SmithsFallsLawyer.com?subject=' + subject + '&body=' + body;
+                successMsg.classList.remove('hidden');
+                form.classList.add('hidden');
+                return;
+            }
+
+            // Formspree submission
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending&hellip;';
+
+            fetch(formAction, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    successMsg.classList.remove('hidden');
+                    form.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(function() {
+                errorMsg.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <svg data-lucide="arrow-right" class="w-4 h-4" stroke-width="2.5"></svg>';
+                lucide.createIcons();
             });
         });
     </script>

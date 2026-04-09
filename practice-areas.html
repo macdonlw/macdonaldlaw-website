@@ -3,11 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.tailwindcss.com unpkg.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
   <meta name="description" content="MacDonald Law Office practises criminal defence, real estate law, and wills in Smiths Falls, Ontario. Over 20 years of focused legal experience. (613) 283-0012.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://macdonaldlaw.ca/practice-areas.html">
   <title>Practice Areas — Criminal Defence, Real Estate & Wills | MacDonald Law Office, Smiths Falls</title>
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Practice Areas — Criminal Defence, Real Estate & Wills">
+  <meta property="og:description" content="Three practice areas, one small office, over twenty years. Criminal defence, real estate law, and wills in Smiths Falls, Ontario.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://macdonaldlaw.ca/practice-areas.html">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "MacDonald Law Office",
+    "url": "https://macdonaldlaw.ca",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Legal Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Real Estate Law",
+            "description": "Residential conveyancing for purchases, sales, mortgages, title searches, and closing representation."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Criminal Defence",
+            "description": "All Criminal Code and provincial offences, bail hearings, trial advocacy, and sentencing. ESM Panel member."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wills & Powers of Attorney",
+            "description": "Last wills, powers of attorney for property and personal care, codicils and will amendments."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
   <!-- Tailwind CSS with custom colors -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -53,7 +102,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
 
   <style>
     * {
@@ -160,7 +209,20 @@
       transform: translateY(-4px);
       box-shadow: 0 10px 25px rgba(27, 42, 74, 0.1);
     }
+    /* Darken accent text on light backgrounds to meet WCAG AA 4.5:1 contrast */
+    .bg-cream .text-accent, .bg-cream-dark .text-accent, .bg-white .text-accent,
+    .bg-warm-100 .text-accent, section:not(.bg-primary):not(.bg-primary-dark):not(.bg-accent) .text-accent {
+      color: #866812;
+    }
   </style>
+  <!-- Analytics: Uncomment one of the following when ready.
+       Option A — Plausible (privacy-friendly, no cookies, GDPR-compliant):
+       <script defer data-domain="macdonaldlaw.ca" src="https://plausible.io/js/script.js"></script>
+
+       Option B — Google Analytics 4:
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+       <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  -->
 </head>
 <body class="font-sans text-charcoal bg-cream">
 
@@ -194,12 +256,12 @@
         <!-- Desktop Navigation -->
         <div class="desktop-nav flex items-center gap-8">
           <a href="index.html" class="nav-link text-primary hover:text-accent transition-colors">Home</a>
-          <a href="index.html#about" class="nav-link text-primary hover:text-accent transition-colors">About</a>
+          <a href="about.html" class="nav-link text-primary hover:text-accent transition-colors">About</a>
           <a href="practice-areas.html" class="nav-link active text-accent">Practice Areas</a>
-          <a href="index.html#contact" class="nav-link text-primary hover:text-accent transition-colors">Contact</a>
-          <button class="btn-transition bg-accent hover:bg-accent-hover text-white px-6 py-2 text-sm font-medium">
+          <a href="contact.html" class="nav-link text-primary hover:text-accent transition-colors">Contact</a>
+          <a href="contact.html" class="btn-transition bg-accent hover:bg-accent-hover text-white px-6 py-2 text-sm font-medium inline-block">
             Book Consultation
-          </button>
+          </a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -211,12 +273,12 @@
       <!-- Mobile Navigation (hidden by default) -->
       <div class="mobile-menu md:hidden pb-4 hidden" id="mobile-nav">
         <a href="index.html" class="block py-2 text-primary hover:text-accent">Home</a>
-        <a href="index.html#about" class="block py-2 text-primary hover:text-accent">About</a>
+        <a href="about.html" class="block py-2 text-primary hover:text-accent">About</a>
         <a href="practice-areas.html" class="block py-2 text-accent font-medium">Practice Areas</a>
-        <a href="index.html#contact" class="block py-2 text-primary hover:text-accent">Contact</a>
-        <button class="w-full mt-4 bg-accent hover:bg-accent-hover text-white px-6 py-2 text-sm font-medium">
+        <a href="contact.html" class="block py-2 text-primary hover:text-accent">Contact</a>
+        <a href="contact.html" class="block w-full mt-4 bg-accent hover:bg-accent-hover text-white px-6 py-2 text-sm font-medium text-center">
           Book Consultation
-        </button>
+        </a>
       </div>
     </div>
   </nav>
@@ -468,9 +530,9 @@
           Give us a call or send a message. We're a small office &mdash; and that's on purpose.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="btn-transition bg-white text-accent hover:bg-cream px-8 py-3 font-medium rounded transition-colors">
+          <a href="contact.html" class="btn-transition bg-white text-accent hover:bg-cream px-8 py-3 font-medium rounded transition-colors inline-block">
             Book Consultation
-          </button>
+          </a>
           <a href="tel:+16132830012" class="btn-transition border-2 border-white text-white hover:bg-white hover:text-accent px-8 py-3 font-medium rounded transition-colors inline-block text-center">
             (613) 283-0012
           </a>
@@ -505,9 +567,9 @@
           <h3 class="font-serif text-lg font-bold text-cream mb-4">Quick Links</h3>
           <ul class="space-y-2 text-sm">
             <li><a href="index.html" class="text-warm-300 hover:text-accent transition-colors">Home</a></li>
-            <li><a href="index.html#about" class="text-warm-300 hover:text-accent transition-colors">About</a></li>
+            <li><a href="about.html" class="text-warm-300 hover:text-accent transition-colors">About</a></li>
             <li><a href="practice-areas.html" class="text-accent font-medium">Practice Areas</a></li>
-            <li><a href="index.html#contact" class="text-warm-300 hover:text-accent transition-colors">Contact</a></li>
+            <li><a href="contact.html" class="text-warm-300 hover:text-accent transition-colors">Contact</a></li>
           </ul>
         </div>
 
@@ -544,7 +606,7 @@
 
       <!-- Bottom Bar -->
       <div class="border-t border-primary-light pt-8 text-center text-sm text-warm-300">
-        <p>&copy; 2024 MacDonald Law Office. All rights reserved.</p>
+        <p>&copy; 2025 MacDonald Law Office. All rights reserved.</p>
       </div>
     </div>
   </footer>

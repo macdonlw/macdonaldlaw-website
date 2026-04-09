@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.tailwindcss.com unpkg.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
   <title>About Mark MacDonald — Criminal Lawyer & Real Estate Solicitor | Smiths Falls</title>
   <meta name="description" content="Mark MacDonald has practised criminal defence, real estate, and wills in Smiths Falls, Ontario since 2002. Called to the Bar in 2002. Call (613) 283-0012.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://macdonaldlaw.ca/about.html">
 
   <!-- Open Graph -->
   <meta property="og:title" content="About Mark MacDonald — Criminal Lawyer & Real Estate Solicitor">
@@ -37,7 +40,7 @@
   </script>
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -64,7 +67,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
 
   <style>
     body { font-family: 'DM Sans', system-ui, sans-serif; }
@@ -88,7 +91,20 @@
     /* Skip link */
     .skip-link { position: absolute; top: -100%; left: 16px; z-index: 100; background: #B8942D; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px; }
     .skip-link:focus { top: 16px; }
+    /* Darken accent text on light backgrounds to meet WCAG AA 4.5:1 contrast */
+    .bg-cream .text-accent, .bg-cream-dark .text-accent, .bg-white .text-accent,
+    .bg-warm-100 .text-accent, section:not(.bg-primary):not(.bg-primary-dark):not(.bg-accent) .text-accent {
+      color: #866812;
+    }
   </style>
+  <!-- Analytics: Uncomment one of the following when ready.
+       Option A — Plausible (privacy-friendly, no cookies, GDPR-compliant):
+       <script defer data-domain="macdonaldlaw.ca" src="https://plausible.io/js/script.js"></script>
+
+       Option B — Google Analytics 4:
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+       <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  -->
 </head>
 <body class="bg-cream text-charcoal antialiased">
 
