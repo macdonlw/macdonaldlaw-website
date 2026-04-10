@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' cdn.tailwindcss.com unpkg.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+  <meta name="description" content="Privacy policy for MacDonald Law Office, Smiths Falls, Ontario. How we collect, use, and protect your personal information under PIPEDA and the Law Society of Ontario Rules of Professional Conduct.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://macdonaldlaw.ca/privacy-policy.html">
+  <title>Privacy Policy | MacDonald Law Office, Smiths Falls</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Privacy Policy — MacDonald Law Office">
+  <meta property="og:description" content="How MacDonald Law Office collects, uses, and protects your personal information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://macdonaldlaw.ca/privacy-policy.html">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT: '#1B2A4A', light: '#2A3D66', dark: '#111D35' },
+            accent:   { DEFAULT: '#B8942D', hover: '#9A7B22', light: '#D4B44A' },
+            cream:    { DEFAULT: '#FAF9F6', dark: '#F2F0EB' },
+            charcoal: { DEFAULT: '#1A1A1A' },
+            warm:     { 100: '#F7F5F0', 200: '#EDE9E0', 300: '#D4CFC4', 400: '#A9A298', 500: '#7A7267' }
+          },
+          fontFamily: {
+            serif:  ['"Cormorant Garabond"', 'Georgia', 'serif'],
+            sans:   ['"DM Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    body { font-family: 'DM Sans', system-ui, sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .btn-transition { transition: all 0.25s ease; }
+    .divider { width: 48px; height: 2px; background: #B8942D; }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+      background: #B8942D; transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active::after { width: 100%; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #mobile-menu.open { max-height: 400px; }
+    .skip-link { position: absolute; top: -100%; left: 16px; z-index: 100; background: #B8942D; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px; }
+    .skip-link:focus { top: 16px; }
+    .bg-cream .text-accent, .bg-cream-dark .text-accent, .bg-white .text-accent,
+    .bg-warm-100 .text-accent, section:not(.bg-primary):not(.bg-primary-dark):not(.bg-accent) .text-accent {
+      color: #866812;
+    }
+    .policy-section { margin-bottom: 2.5rem; }
+    .policy-section h2 { font-size: 1.75rem; font-weight: 600; color: #1B2A4A; margin-bottom: 1rem; }
+    .policy-section p, .policy-section li { font-size: 0.9375rem; line-height: 1.75; color: #7A7267; }
+    .policy-section ul { list-style: disc; padding-left: 1.5rem; }
+    .policy-section ul li { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="bg-primary-dark text-warm-300 text-xs py-2.5 hidden md:block">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <a href="tel:6132830012" class="btn-transition flex items-center gap-1.5 hover:text-accent">
+          <i data-lucide="phone" style="width:12px;height:12px;"></i>
+          (613) 283-0012
+        </a>
+        <a href="mailto:Reception@SmithsFallsLawyer.com" class="btn-transition flex items-center gap-1.5 hover:text-accent">
+          <i data-lucide="mail" style="width:12px;height:12px;"></i>
+          Reception@SmithsFallsLawyer.com
+        </a>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <i data-lucide="clock" style="width:12px;height:12px;"></i>
+        Mon &ndash; Fri: 9:00 AM &ndash; 5:00 PM
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="bg-primary sticky top-0 z-50 shadow-lg" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 border-2 border-accent rounded flex items-center justify-center">
+          <span class="font-serif text-accent font-bold text-lg leading-none">M</span>
+        </div>
+        <div>
+          <span class="text-white font-serif text-xl font-semibold leading-none block">MacDonald</span>
+          <span class="text-warm-400 text-[10px] tracking-[0.2em] uppercase font-sans">Law Office</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-warm-300 text-sm font-semibold tracking-wide uppercase hover:text-white">Home</a>
+        <a href="about.html" class="nav-link text-warm-300 text-sm font-semibold tracking-wide uppercase hover:text-white">About</a>
+        <a href="practice-areas.html" class="nav-link text-warm-300 text-sm font-semibold tracking-wide uppercase hover:text-white">Practice Areas</a>
+        <a href="real-estate.html" class="nav-link text-warm-300 text-sm font-semibold tracking-wide uppercase hover:text-white">Real Estate</a>
+        <a href="contact.html" class="nav-link text-warm-300 text-sm font-semibold tracking-wide uppercase hover:text-white">Contact</a>
+        <a href="tel:6132830012" class="btn-transition bg-accent text-white text-sm font-semibold px-6 py-2.5 rounded hover:bg-accent-hover hover:scale-[1.02]">
+          (613) 283-0012
+        </a>
+      </div>
+      <button id="nav-toggle" class="md:hidden text-white" aria-label="Toggle menu" aria-expanded="false">
+        <i data-lucide="menu" style="width:24px;height:24px;"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-primary-dark border-t border-white/10">
+      <div class="px-6 py-4 space-y-3">
+        <a href="index.html" class="block text-warm-300 font-semibold text-sm py-2 hover:text-white">Home</a>
+        <a href="about.html" class="block text-warm-300 font-semibold text-sm py-2 hover:text-white">About</a>
+        <a href="practice-areas.html" class="block text-warm-300 font-semibold text-sm py-2 hover:text-white">Practice Areas</a>
+        <a href="real-estate.html" class="block text-warm-300 font-semibold text-sm py-2 hover:text-white">Real Estate</a>
+        <a href="contact.html" class="block text-warm-300 font-semibold text-sm py-2 hover:text-white">Contact</a>
+        <a href="tel:6132830012" class="btn-transition inline-block bg-accent text-white text-sm font-semibold px-6 py-2.5 rounded mt-2 hover:bg-accent-hover">(613) 283-0012</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="bg-primary py-16 md:py-20">
+      <div class="max-w-3xl mx-auto px-6 text-center fade-in">
+        <p class="text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-6">Your Privacy Matters</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-semibold text-white leading-tight mb-4">Privacy Policy</h1>
+        <p class="text-warm-300 text-lg">How we collect, use, and protect your personal information.</p>
+      </div>
+    </section>
+
+    <!-- ============ POLICY CONTENT ============ -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-6">
+
+        <p class="text-sm text-warm-400 mb-10 fade-in">Effective date: April 10, 2026 &nbsp;|&nbsp; Last updated: April 10, 2026</p>
+
+        <!-- 1. Introduction -->
+        <div class="policy-section fade-in">
+          <h2>1. Introduction</h2>
+          <p>MacDonald Law Office (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;the firm&rdquo;) is committed to protecting the privacy of our clients and visitors. This policy describes how we collect, use, disclose, and safeguard personal information in accordance with the <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) and the Law Society of Ontario Rules of Professional Conduct.</p>
+          <p class="mt-3">By using our website or providing personal information to our office, you consent to the collection, use, and disclosure of your information as described in this policy.</p>
+          <p class="mt-3"><strong>Important:</strong> Contacting our office by email, telephone, or through this website does not establish a solicitor&ndash;client relationship. A solicitor&ndash;client relationship is only created when both parties agree, typically through a signed retainer agreement.</p>
+        </div>
+
+        <!-- 2. Privacy Officer -->
+        <div class="policy-section fade-in">
+          <h2>2. Accountability</h2>
+          <p>Mark MacDonald is the Privacy Officer responsible for the firm&rsquo;s compliance with this policy and with applicable privacy legislation. Questions, concerns, or requests regarding your personal information should be directed to:</p>
+          <div class="bg-cream-dark border border-warm-200 rounded-lg p-6 mt-4">
+            <p class="text-sm text-charcoal"><strong>Mark MacDonald, Privacy Officer</strong></p>
+            <p class="text-sm text-warm-500 mt-1">MacDonald Law Office</p>
+            <p class="text-sm text-warm-500">94 Beckwith Street North, Smiths Falls, ON K7A 2C1</p>
+            <p class="text-sm text-warm-500">Telephone: <a href="tel:6132830012" class="text-accent hover:underline">(613) 283-0012</a></p>
+            <p class="text-sm text-warm-500">Email: <a href="mailto:Reception@SmithsFallsLawyer.com" class="text-accent hover:underline">Reception@SmithsFallsLawyer.com</a></p>
+          </div>
+        </div>
+
+        <!-- 3. Personal Information We Collect -->
+        <div class="policy-section fade-in">
+          <h2>3. Personal Information We Collect</h2>
+          <p>&ldquo;Personal information&rdquo; means information about an identifiable individual. It does not include business contact information used solely for business communications. Depending on the nature of your matter, we may collect:</p>
+          <ul class="mt-3">
+            <li>Name, home address, telephone number, and email address</li>
+            <li>Date of birth and government-issued identification</li>
+            <li>Financial information for billing, mortgage closings, or trust account transactions</li>
+            <li>Information related to your legal matter, including documents, correspondence, and court records</li>
+            <li>Information provided by third parties such as realtors, lenders, insurers, opposing counsel, or government agencies</li>
+            <li>Information submitted through our website contact or quote request forms</li>
+          </ul>
+        </div>
+
+        <!-- 4. Why We Collect -->
+        <div class="policy-section fade-in">
+          <h2>4. Why We Collect Personal Information</h2>
+          <p>We collect and use personal information for the following purposes:</p>
+          <ul class="mt-3">
+            <li>Providing legal services and advice</li>
+            <li>Client identification and verification, as required by the Law Society of Ontario</li>
+            <li>Conducting conflict-of-interest checks</li>
+            <li>Processing real estate transactions, including title searches, registrations, and fund transfers</li>
+            <li>Billing, invoicing, and collecting fees for legal services</li>
+            <li>Communicating with you about your matter or our services</li>
+            <li>Complying with legal, regulatory, and professional obligations</li>
+          </ul>
+        </div>
+
+        <!-- 5. Consent -->
+        <div class="policy-section fade-in">
+          <h2>5. Consent</h2>
+          <p>We obtain your consent before collecting, using, or disclosing your personal information. Consent may be <strong>express</strong> (written or verbal) or <strong>implied</strong> (reasonably inferred from your actions, such as providing information when retaining our services).</p>
+          <p class="mt-3">You may withdraw your consent at any time by contacting our Privacy Officer, subject to legal or contractual restrictions and reasonable notice. Withdrawing consent may limit our ability to continue providing legal services.</p>
+          <p class="mt-3">In certain circumstances, we may collect, use, or disclose personal information without consent as permitted by law &mdash; for example, to comply with a court order, for debt collection, or where required by the Law Society of Ontario.</p>
+        </div>
+
+        <!-- 6. Solicitor-Client Privilege -->
+        <div class="policy-section fade-in">
+          <h2>6. Solicitor&ndash;Client Privilege and Confidentiality</h2>
+          <p>As lawyers, we are bound by the Law Society of Ontario Rules of Professional Conduct regarding the confidentiality of client information. Solicitor&ndash;client privilege is a fundamental principle of our legal system.</p>
+          <p class="mt-3">We do not disclose information protected by solicitor&ndash;client privilege unless the privilege is lawfully waived by the client or we are required by law to do so. Our duty of confidentiality survives the termination of the solicitor&ndash;client relationship and continues indefinitely.</p>
+          <p class="mt-3">Where PIPEDA and our professional obligations overlap, we comply with both. Where they conflict, our obligations under the Rules of Professional Conduct and the protection of solicitor&ndash;client privilege take precedence.</p>
+        </div>
+
+        <!-- 7. Disclosure -->
+        <div class="policy-section fade-in">
+          <h2>7. Disclosure of Personal Information</h2>
+          <p>We may disclose your personal information in the following circumstances:</p>
+          <ul class="mt-3">
+            <li>With your consent, to carry out the purposes for which it was collected</li>
+            <li>To third parties directly involved in your legal matter (e.g., lenders, realtors, title insurers, co-counsel, expert witnesses)</li>
+            <li>To service providers who assist our firm under contractual obligations of confidentiality (e.g., IT support)</li>
+            <li>As required by law, including court orders, subpoenas, and regulatory requirements</li>
+            <li>To the Law Society of Ontario, as required by our professional obligations</li>
+            <li>For the purpose of collecting fees owed to us</li>
+          </ul>
+          <p class="mt-3">We do not sell, rent, or trade personal information to third parties for marketing purposes.</p>
+        </div>
+
+        <!-- 8. Retention -->
+        <div class="policy-section fade-in">
+          <h2>8. Retention of Personal Information</h2>
+          <p>We retain personal information only as long as necessary to fulfill the purposes for which it was collected, or as required by law. File retention and destruction follow the guidelines established by the Law Society of Ontario.</p>
+          <p class="mt-3">When personal information is no longer needed, we dispose of it securely through shredding, deletion, or other appropriate means.</p>
+        </div>
+
+        <!-- 9. Safeguards -->
+        <div class="policy-section fade-in">
+          <h2>9. Safeguards</h2>
+          <p>We protect personal information with safeguards appropriate to the sensitivity of the information, including:</p>
+          <ul class="mt-3">
+            <li><strong>Physical safeguards:</strong> Secure office premises and locked file storage</li>
+            <li><strong>Technological safeguards:</strong> Encryption, firewalls, password protection, and secure electronic registration through Teraview</li>
+            <li><strong>Organizational safeguards:</strong> Access to client information is restricted on a need-to-know basis, and all staff are bound by confidentiality obligations</li>
+          </ul>
+          <p class="mt-3">While we take reasonable steps to protect your information, no method of electronic transmission or storage is completely secure. We cannot guarantee absolute security of information transmitted to us electronically.</p>
+        </div>
+
+        <!-- 10. Website Privacy -->
+        <div class="policy-section fade-in">
+          <h2>10. Website Privacy</h2>
+          <p>Our website (<a href="https://macdonaldlaw.ca" class="text-accent hover:underline">macdonaldlaw.ca</a>) does not use cookies or tracking technologies. Information you submit through our contact form or quote request form is transmitted to us through a third-party form service (Formspree) and is used only to respond to your inquiry.</p>
+          <p class="mt-3">Our website may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to review their privacy policies.</p>
+          <p class="mt-3"><strong>Email:</strong> Email communication is not a fully secure medium. If you send us confidential information by email, you accept the risk inherent in that method of communication.</p>
+        </div>
+
+        <!-- 11. Breach Notification -->
+        <div class="policy-section fade-in">
+          <h2>11. Breach Notification</h2>
+          <p>In the event of a breach of security involving personal information that creates a real risk of significant harm, we will:</p>
+          <ul class="mt-3">
+            <li>Report the breach to the Office of the Privacy Commissioner of Canada</li>
+            <li>Notify affected individuals as soon as feasible</li>
+            <li>Keep a record of the breach for a minimum of 24 months</li>
+          </ul>
+        </div>
+
+        <!-- 12. Your Right to Access -->
+        <div class="policy-section fade-in">
+          <h2>12. Your Right to Access Your Information</h2>
+          <p>You have the right to request access to the personal information we hold about you by making a written request to our Privacy Officer. We will respond within 30 days.</p>
+          <p class="mt-3">In some circumstances, we may not be able to provide access &mdash; for example, where the information is subject to solicitor&ndash;client privilege, where disclosure would reveal personal information about another individual, or where disclosure could interfere with ongoing litigation.</p>
+          <p class="mt-3">If you believe any of your personal information is inaccurate or incomplete, please contact us so we can make the necessary corrections.</p>
+        </div>
+
+        <!-- 13. Complaints -->
+        <div class="policy-section fade-in">
+          <h2>13. Complaints</h2>
+          <p>If you have concerns about how we handle your personal information, please contact our Privacy Officer. We will investigate all complaints and respond in writing.</p>
+          <p class="mt-3">If you are not satisfied with our response, you may file a complaint with the Office of the Privacy Commissioner of Canada:</p>
+          <div class="bg-cream-dark border border-warm-200 rounded-lg p-6 mt-4">
+            <p class="text-sm text-charcoal"><strong>Office of the Privacy Commissioner of Canada</strong></p>
+            <p class="text-sm text-warm-500 mt-1">Toll-free: 1-800-282-1376</p>
+            <p class="text-sm text-warm-500">Website: <a href="https://www.priv.gc.ca" class="text-accent hover:underline">www.priv.gc.ca</a></p>
+          </div>
+        </div>
+
+        <!-- 14. Changes -->
+        <div class="policy-section fade-in">
+          <h2>14. Changes to This Policy</h2>
+          <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-primary text-warm-300">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-4 gap-12">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 border-2 border-accent rounded flex items-center justify-center">
+              <span class="font-serif text-accent font-bold text-lg leading-none">M</span>
+            </div>
+            <div>
+              <span class="text-white font-serif text-lg font-semibold leading-none block">MacDonald</span>
+              <span class="text-warm-400 text-[10px] tracking-[0.2em] uppercase font-sans">Law Office</span>
+            </div>
+          </div>
+          <p class="text-sm leading-relaxed text-warm-400">
+            A small Smiths Falls law office. Real estate, criminal defence, and wills since 2002.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm tracking-wide uppercase mb-4">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="index.html" class="btn-transition text-sm hover:text-accent">Home</a></li>
+            <li><a href="about.html" class="btn-transition text-sm hover:text-accent">About</a></li>
+            <li><a href="practice-areas.html" class="btn-transition text-sm hover:text-accent">Practice Areas</a></li>
+            <li><a href="real-estate.html" class="btn-transition text-sm hover:text-accent">Real Estate</a></li>
+            <li><a href="contact.html" class="btn-transition text-sm hover:text-accent">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm tracking-wide uppercase mb-4">Practice Areas</h4>
+          <ul class="space-y-2.5">
+            <li><a href="practice-areas.html#real-estate" class="btn-transition text-sm hover:text-accent">Real Estate Law</a></li>
+            <li><a href="practice-areas.html#criminal" class="btn-transition text-sm hover:text-accent">Criminal Defence</a></li>
+            <li><a href="practice-areas.html#wills" class="btn-transition text-sm hover:text-accent">Wills &amp; POA</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm tracking-wide uppercase mb-4">Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5 text-sm">
+              <i data-lucide="map-pin" class="text-accent flex-shrink-0 mt-0.5" style="width:14px;height:14px;"></i>
+              94 Beckwith Street North<br>Smiths Falls, ON K7A 2C1
+            </li>
+            <li>
+              <a href="tel:6132830012" class="btn-transition flex items-center gap-2.5 text-sm hover:text-accent">
+                <i data-lucide="phone" class="text-accent flex-shrink-0" style="width:14px;height:14px;"></i>
+                (613) 283-0012
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Reception@SmithsFallsLawyer.com" class="btn-transition flex items-center gap-2.5 text-sm hover:text-accent">
+                <i data-lucide="mail" class="text-accent flex-shrink-0" style="width:14px;height:14px;"></i>
+                Reception@SmithsFallsLawyer.com
+              </a>
+            </li>
+            <li class="flex items-start gap-2.5 text-sm">
+              <i data-lucide="clock" class="text-accent flex-shrink-0 mt-0.5" style="width:14px;height:14px;"></i>
+              Mon &ndash; Fri: 9:00 AM &ndash; 5:00 PM
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-warm-400">
+        <p>&copy; 2026 MacDonald Law Office. All rights reserved. &nbsp;|&nbsp; <a href="privacy-policy.html" class="text-accent">Privacy Policy</a></p>
+        <p>94 Beckwith Street North, Smiths Falls, Ontario K7A 2C1</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
